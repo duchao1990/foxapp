@@ -1,0 +1,20 @@
+<ion-view view-title="{{title}}">
+  <ion-content delegate-handle="job-handle" class="has-header" on-scroll="scroll(scrollTop, scrollLeft)">
+        <ion-refresher pulling-text="刷新页面..." on-refresh="doRefresh()" ></ion-refresher>
+     	<ion-list>
+          <div class="list card" ng-repeat="item in chatslist | filter:searchKey">
+            <div class="item item-body">
+            <a class="carda" href="#/tab/chatInfo/{{item.id}}">
+              <img class="full-image" src="{{item.cover}}">
+              {{item.title}}
+            </a>
+            <p><span class='nickname'>{{item.user.nickname}}</span> <span class='timespan'>{{item.update_time*1000|date:"yyyy/MM/dd H:mm"}}</span> </p>
+            </div>
+        </div>
+ 		</ion-list>
+  <ion-infinite-scroll
+      ng-if="more"
+      on-infinite="loadMore()" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

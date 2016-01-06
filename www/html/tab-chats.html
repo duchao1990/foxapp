@@ -1,0 +1,12 @@
+<ion-view view-title="佛珠">
+  <ion-content>
+  <div ng-repeat="chats in groups">
+  	  <div class="item item-divider" >{{chats.title}}</div>
+      <div class="mallist">
+        <a ng-repeat="list in chats._" href="#/tab/chatsList/{{list.id}}">
+            <center class="font12">{{list.title}}</center>
+        </a>
+      </div>
+  </div>
+  </ion-content>
+</ion-view>

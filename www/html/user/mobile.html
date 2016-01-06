@@ -1,0 +1,18 @@
+<ion-view class='mybg' title="验证手机">
+  <ion-content class="has-header padding">
+   <form name="goVerify" ng-controller="UserCtrl">
+     <div id="mcbg" class="list list-inset">
+       <label class="item item-input ">
+         <input type="text" placeholder="手机号" required ng-model='goVerify.mobile'  ng-pattern='/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/'>
+       </label>
+       <label class="item item-input">
+         <input type="password" placeholder="密码" required ng-minlength='6' ng-maxlength='6' ng-model='goVerify.vcode'>
+       </label>
+        <div class="button-bar">
+          <button class="button icon-left ion-chevron-left button-assertive" ng-click="sendSms(goVerify.mobile)" ng-disabled="isDisabled">{{cuntdown}}</button>
+          <button class="button icon-right ion-chevron-right button-calm" ng-disabled="goVerify.$invalid" ng-click="ToVcode(ForgotPwd.vcode)">验证</button>
+        </div>
+     </div>
+    </form>
+  </ion-content>
+  </ion-view>

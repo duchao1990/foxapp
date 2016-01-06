@@ -1,0 +1,19 @@
+<ion-view title="设置密码" class='mybg'>
+    <ion-content class="padding">
+        <form name="setPwd" ng-controller="UserCtrl" ng-submit="setPwdForm()">
+          <div id="mcbg" class="list list-inset">
+            <label class="item item-input ">
+              <input type="password" placeholder="密码" class="text-center" name='pwd' ng-minlength='6' ng-maxlength='12' required ng-model='setPwd.newpwd'>
+            </label>
+            <label class="item item-input">
+              <input type="password" placeholder="确认密码" class="text-center" ng-minlength='6' ng-maxlength='12' required pwCheck='pwd' ng-model='setPwd.confpwd'>
+            </label>
+              <button type="submit" class="button button-block button-assertive" ng-disabled="setPwd.$invalid">
+                <i id="mlogin" class="balanced button-icon  ion-person-add"></i>
+                设置
+              </button>
+            </div>
+
+        </form>
+    </ion-content>
+</ion-view>

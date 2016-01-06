@@ -1,0 +1,25 @@
+<ion-view hide-nav-bar="true">
+  <ion-content style='background-color:#ffc900'>
+    <form name="Login" ng-controller="UserCtrl" ng-submit="LoginForm()">
+      <div id="mcbg" class="list list-inset">
+        <label class="item item-input ">
+          <input type="text" placeholder="手机号" required ng-model='Login.mobile'  ng-pattern='/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/'>
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="密码" required ng-minlength='6'  ng-model='Login.pwd'>
+        </label>
+        <button class="button button-block button-assertive" ng-click="Wxlogin()">微信登陆</button>
+       <button type='submit' class="button button-block button-positive" ng-disabled="Login.$invalid">登陆</button>
+      </div>
+    </form>
+    
+       
+  </ion-content>
+  <div class="bar bar-footer bar-clear"><a class="button button-clear" href="#/mobile/fot">忘记密码?</a><div class="title"></div><a class="button button-clear" href="#/mobile/reg">我要注册!</a></div>
+
+</ion-view>
+<!-- <ion-view hide-nav-bar="true">
+  <ion-content class="padding" style="background-color:#ffc900;">
+    <button class="button button-assertive" style="width: 36%;min-width: 120px;max-width: 150px;height: 150px;border-radius: 60px;min-width: 120px;max-width: 150px;left: 32%;top: 150px;" ng-click="Wxlogin()">微信登陆</button>
+  </ion-content>
+</ion-view> -->

@@ -1,0 +1,15 @@
+<ion-view view-title="愿望列表">
+  <ion-content>
+    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder" can-swipe="true">
+        <ion-item ng-repeat="yuan in yuans" class="item item-text-wrap" style="min-height: 50px;">
+          {{yuan.yuan}}
+          <ion-option-button class="button-assertive" ng-click="huan({{yuan.id}})">
+            还愿
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+      <div style="display:{{play}};margin-top:50px;">
+        <center>没有相关数据!!</center>
+      </div>
+  </ion-content>
+</ion-view>
